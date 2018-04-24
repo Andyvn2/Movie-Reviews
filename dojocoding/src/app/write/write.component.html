@@ -1,0 +1,24 @@
+<h2>Write a Review</h2>
+<div *ngIf="errors != 'undefined'" >
+
+	 	<p color="red">{{ Errors['message'] }}</p>
+
+</div>
+<form (submit) = "onSubmitReview()" class= "postReview">åå
+	
+	<br>
+	Name: <input type="name" name="review.name" [(ngModel)] = "newReview.name">
+	<br>
+	Stars: <select name= "review.rating" [(ngModel)] = "newReview.rating"> 
+		<option value=1>1</option>
+		<option value=2>2</option>
+		<option value=3>3</option>
+		<option value=4>4</option>
+		<option value=5>5</option>
+
+			</select>
+	<br>
+	Youre Review: <input type="text" name="review.review" [(ngModel)] = "newReview.review">
+	<input type="submit" name="submitreview">
+	<button [routerLink] = "['/review/'+ newReview.restID ]">Cancel</button>
+</form>

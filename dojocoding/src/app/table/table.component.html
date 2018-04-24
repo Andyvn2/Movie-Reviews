@@ -1,0 +1,35 @@
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Enable button after three seconds</title>
+    <script type='text/javascript'>
+    setTimeout(function() {
+        document.getElementById('delete').disabled = false;
+    }, 30000);
+</script>
+  </head>
+  
+
+
+<button [routerLink] = "['new']" >New Restaurant</button>
+<app-edit></app-edit>
+<table style="width:700px;" class="table">
+  <tr>
+    <th>Restaurant</th>
+    <th>Cuisine</th>
+    <th>Actions Available</th>
+  </tr>
+
+
+<tr *ngFor="let restaurant of restaurants">
+
+  <td> {{ restaurant.name }} </td>
+  <td> {{ restaurant.cuisine }} </td>
+  <td>
+    <button [routerLink]="['/review/'+restaurant._id]">Read Reviews</button>
+    <button [routerLink]="['/edit/'+restaurant._id]" >Update</button>
+    <button (click) = "deleteButtonClicked(restaurant._id)" id = "delete">Delete</button>
+  </td>
+</tr>
+ 
+</table>
+

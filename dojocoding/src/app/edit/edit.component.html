@@ -1,0 +1,22 @@
+
+	 	{{ Errors['message'] }}
+
+
+
+<h2>Edit a Restaurant</h2>
+
+
+
+
+
+
+
+<form (submit) = "onSubmitEdit( editThisRest._id )" class="editForm">
+	<br>
+	Resraurant: <input type="text" name="editRestaurant.title" [(ngModel)] = "editThisRest.name">
+	<br>
+	Cuisine Type: <input type="text" name="editRestaurant.cuisine" [(ngModel)] = "editThisRest.cuisine" >
+	<br>
+	<button [routerLink]="['/']" >Cancel</button>
+	<input type="submit" name="editSubmit" value="Edit">
+</form>

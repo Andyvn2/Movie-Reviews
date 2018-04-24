@@ -1,0 +1,18 @@
+<h2>Add a New Restaurant</h2>
+<div *ngIf="errors != 'undefined'" >
+
+	 	<p color="red">{{ Errors['message'] }}</p>
+
+	 </div>
+	 {{ duplicate }}
+<form (submit) = "onSubmit()" class="postForm">
+
+	
+	<br>
+	Restaurant Name:<input type="text" name="newRest.title" [(ngModel)] = "newRest.name" >
+	<br>
+	Restaurant Description:<input type="text" name="newRest.description" [(ngModel)] = "newRest.cuisine">
+	<br>
+	<input type="submit" name="submitForm" value="Register">
+	<button [routerLink] = "['/']">Cancel</button>
+</form>
